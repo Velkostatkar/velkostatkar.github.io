@@ -4,7 +4,7 @@ const context = canvas.getContext('2d');
 let isDrawing = false;
 let x = 0;
 let y = 0;
-let brushSize = 20;
+let brushSize = 10;
 let brushColor = 'black';
 
 const dirtImg = new Image();
@@ -41,7 +41,7 @@ function draw(e) {
   context.closePath();
 
   context.globalCompositeOperation = 'destination-out';
-  context.arc(x, y, brushSize / 40, 20, 60 * Math.PI);
+  context.arc(x, y, brushSize / 40, 60, 60 * Math.PI);
   context.fill();
   [x, y] = [e.offsetX, e.offsetY];
 }
