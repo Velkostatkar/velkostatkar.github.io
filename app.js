@@ -41,7 +41,7 @@ function draw(e) {
   context.closePath();
 
   context.globalCompositeOperation = 'destination-out';
-  context.arc(x, y, brushSize / 20, 20, 20 * Math.PI);
+  context.arc(x, y, brushSize / 40, 20, 60 * Math.PI);
   context.fill();
   [x, y] = [e.offsetX, e.offsetY];
 }
