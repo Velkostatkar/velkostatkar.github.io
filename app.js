@@ -4,7 +4,7 @@ const context = canvas.getContext('2d');
 let isDrawing = false;
 let x = 0;
 let y = 0;
-let brushSize = 10;
+let brushSize = 20;
 let brushColor = 'black';
 
 const dirtImg = new Image();
