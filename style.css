@@ -88,14 +88,3 @@ input[type="range"]:focus::-moz-range-track {
   margin: 0 auto;
 }
 
-/* Media queries for smaller devices */
-@media (max-width: 767px) {
-  .container {
-    width: 100%;
-    padding: 10px;
-  }
-  .brush {
-    width: 50px;
-    height: 50px;
-  }
-}
