@@ -1,7 +1,8 @@
 canvas {
   border: 1px solid black;
   background-image: url('clean.jpg');
-  background-size: cover;
+  background-size: 1524px 900px
+  
 }
 
 .canvas-container {
