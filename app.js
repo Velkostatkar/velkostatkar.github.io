@@ -41,11 +41,23 @@ function draw(e) {
   context.closePath();
 
   context.globalCompositeOperation = 'destination-out';
-  context.arc(x, y, brushSize / 40, 60, 60 * Math.PI);
-  context.fill();
+  context.beginPath();
+  context.moveTo(x, y);
+  context.lineTo(e.offsetX, y);
+  context.lineWidth = brushSize;
+  context.stroke();
+  context.closePath();
+  
   [x, y] = [e.offsetX, e.offsetY];
 }
 
 canvas.addEventListener('mousedown', startDrawing);
 canvas.addEventListener('mousemove', draw);
 canvas.addEventListener('mouseup', stopDrawing);
+
+const brushSizeInput = document.getElementById('brush-size-input');
+brushSizeInput.addEventListener('input', () => {
+  const brushSizeRange = brushSizeInput.value;
+  const newBrushSize = brushSizeRange / 130 * (130 - 10) + 10;
+  updateBrushSize(newBrushSize);
+});
