@@ -1,22 +1,22 @@
 canvas {
-	border: 1px solid black;
-	background-image: url('clean.jpg');
-	background-size: cover;
+  border: 1px solid black;
+  background-image: url('clean.jpg');
+  background-size: cover;
 }
 
 .canvas-container {
-	position: relative;
+  position: relative;
 }
 
 .canvas-tools {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	margin: 10px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 10px;
 }
 
 #switch-layer-btn {
-	margin-right: 10px;
+  margin-right: 10px;
 }
 
 input[type="range"] {
@@ -61,3 +61,11 @@ input[type="range"]::-moz-range-thumb {
   height: 20px;
   width: 20px;
   border-radius: 50%;
+  background: black;
+  margin-top: -9px;
+  cursor: pointer;
+}
+
+input[type="range"]:focus::-moz-range-track {
+  background: #ccc;
+}

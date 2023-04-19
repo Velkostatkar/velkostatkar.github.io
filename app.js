@@ -4,7 +4,8 @@ const context = canvas.getContext('2d');
 let isDrawing = false;
 let x = 0;
 let y = 0;
-let brushSize = 10;
+let brushWidth = 30;
+let brushHeight = 8;
 let brushColor = 'black';
 
 const dirtImg = new Image();
@@ -16,8 +17,9 @@ dirtImg.onload = function() {
 const cleanImg = new Image();
 cleanImg.src = 'clean.jpg';
 
-function updateBrushSize(newSize) {
-  brushSize = newSize;
+function updateBrushSize(newWidth, newHeight) {
+  brushWidth = newWidth;
+  brushHeight = newHeight;
 }
 
 function updateBrushColor(newColor) {
@@ -37,14 +39,14 @@ function draw(e) {
   if (!isDrawing) return;
   context.beginPath();
   context.fillStyle = brushColor;
-  context.fillRect(e.offsetX - brushSize/2, e.offsetY - brushSize/2, brushSize, brushSize);
+  context.fillRect(e.offsetX - brushWidth/2, e.offsetY - brushHeight/2, brushWidth, brushHeight);
   context.closePath();
 
   context.globalCompositeOperation = 'destination-out';
   context.beginPath();
   context.moveTo(x, y);
   context.lineTo(e.offsetX, y);
-  context.lineWidth = brushSize;
+  context.lineWidth = brushHeight;
   context.stroke();
   context.closePath();
   
@@ -58,6 +60,6 @@ canvas.addEventListener('mouseup', stopDrawing);
 const brushSizeInput = document.getElementById('brush-size-input');
 brushSizeInput.addEventListener('input', () => {
   const brushSizeRange = brushSizeInput.value;
-  const newBrushSize = brushSizeRange / 130 * (130 - 10) + 10;
-  updateBrushSize(newBrushSize);
+  const newBrushWidth = brushSizeRange / 130 * (120 - 30) + 30;
+  updateBrushSize(newBrushWidth, brushHeight);
 });
