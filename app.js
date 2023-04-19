@@ -63,3 +63,12 @@ brushSizeInput.addEventListener('input', () => {
   const newBrushWidth = brushSizeRange / 130 * (120 - 30) + 30;
   updateBrushSize(newBrushWidth, brushHeight);
 });
+
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  context.drawImage(cleanImg, 0, 0, canvas.width, canvas.height);
+}
+
+window.addEventListener('resize', resizeCanvas);
+resizeCanvas();
