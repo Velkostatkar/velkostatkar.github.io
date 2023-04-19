@@ -74,3 +74,33 @@ document.addEventListener('mousemove', (e) => {
   customCursor.style.left = `${e.clientX}px`;
   customCursor.style.top = `${e.clientY}px`;
 });
+
+var audio = new Audio('hold-sound.mp3');
+var intervalId;
+
+function playSound() {
+  audio.loop = true;
+  audio.play();
+  intervalId = setInterval(function() {
+    if (!audio.paused) {
+      audio.currentTime = 0;
+    }
+  }, 23000);
+}
+
+function stopSound() {
+  audio.pause();
+  clearInterval(intervalId);
+}
+
+document.addEventListener('mousedown', function(event) {
+  if (event.button === 0) {
+    playSound();
+  }
+});
+
+document.addEventListener('mouseup', function(event) {
+  if (event.button === 0) {
+    stopSound();
+  }
+});
