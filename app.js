@@ -63,3 +63,14 @@ brushSizeInput.addEventListener('input', () => {
   const newBrushWidth = brushSizeRange / 130 * (120 - 30) + 30;
   updateBrushSize(newBrushWidth, brushHeight);
 });
+// Get the custom cursor element
+const customCursor = document.getElementById('custom-cursor');
+
+// Hide the default cursor
+document.body.style.cursor = 'none';
+
+// Add a mousemove event listener to update the position of the custom cursor
+document.addEventListener('mousemove', (e) => {
+  customCursor.style.left = `${e.clientX}px`;
+  customCursor.style.top = `${e.clientY}px`;
+});

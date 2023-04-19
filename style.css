@@ -15,7 +15,18 @@ canvas {
   left: 0;
   margin: 10px;
 }
+#custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
 
+#custom-cursor img {
+  display: block;
+  width: 400px;
+  height: 400px;
+}
 #switch-layer-btn {
   margin-right: 10px;
 }
