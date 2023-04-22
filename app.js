@@ -60,7 +60,7 @@ canvas.addEventListener('mouseup', stopDrawing);
 const brushSizeInput = document.getElementById('brush-size-input');
 brushSizeInput.addEventListener('input', () => {
   const brushSizeRange = brushSizeInput.value;
-  const newBrushWidth = brushSizeRange / 130 * (120 - 30) + 30;
+  const newBrushWidth = brushSizeRange / 130 * (120 - 10) + 10;
   updateBrushSize(newBrushWidth, brushHeight);
 });
 // Get the custom cursor element
